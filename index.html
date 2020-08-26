@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+</head>
+<style>
+    body{
+        background-color: lightgrey;
+    }
+
+
+    li{
+        font-size: 22px;
+        margin: 8px;
+        
+    }
+
+    button{
+        margin: 0px 15px;
+    }
+
+    li svg{
+        float: right;
+        margin: 5px 20px;
+        cursor: pointer;
+    }
+
+    li svg:hover{
+        font-size: 27px;
+    }
+
+    .tick{
+        float: right;
+        margin: 0px 10px 0px 0px;
+    }
+    
+</style>
+<body>
+
+    <div class="container mt-5">
+        <form class="container mx-auto text-center" onsubmit='notRefresh(event)'>
+            <div class="form-group">
+            <label for="todoItem">Enter Todo Items</label>
+            <input type="text" class="form-control" id="todoItem" aria-describedby="emailHelp" onfocus="showLoader()" onblur="removeLoader()">
+            </div>
+            <button class="btn btn-primary" onclick='addItem()'>Add Item</button>
+            <button class="btn btn-primary" onclick='deleteAllItems()'>Delete All Items</button>
+                <div class="spinner-border text-primary float-right d-none" role="status" id="loader">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <svg width="2em" height="2em" class="tick d-none" viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                  </svg>
+
+        </form>
+
+        <ul id="itemList" class="list-group my-5">
+            <!-- <li></li> -->
+            
+              
+        </ul>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</html>
